@@ -59,7 +59,7 @@ export default function Home() {
       </div>
       {nft ? (
         <section className="content flex flex-wrap justify-between items-center">
-          <div className="left center lg:left w-full bg-gray-900 shadow p-6 text-center text-gray-100 lg:w-4/12">
+          <div className="left center lg:left w-full shadow p-6 text-center lg:w-4/12">
             <div>
               <div className="center">
                 <img className='border-2 border-gray-500' width={350} src={nft?.imageLink} />
