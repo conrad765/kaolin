@@ -54,10 +54,10 @@ export default function Home() {
               )}
             </div>
             <div className='center flex-col'>
-              <h3 className="text-xl font-bold">{nft.name}</h3>
+              <h3 className="text-xl font-bold">{nft?.name}</h3>
               <div className="flex items-center">
                 <p className="mr-2 mt-2 mb-4 bg-blue-300 px-4 py-1 text-sm font-medium text-blue-900">
-                  Rank: {nft.rank}
+                  Rank: {nft?.rank}
                 </p>
                 <p className="mr-2 mt-2 mb-4 bg-blue-300 px-4 py-1 text-sm font-medium text-blue-900">
                   Score: {Math.round(nft.rarity_score)}
