@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 export default function Home() {  
-  const [id, setId] = useState(0)
+  const [id, setId] = useState("0")
   const [nft, setNFT] = useState({})
 
   function getRank() {
@@ -36,7 +36,7 @@ export default function Home() {
             type="number"
             value={id}
             onChange={(e) => {
-              setId(Number(e.target.value))
+              setId((e.target.value))
             }}
             className=" mr-0 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
             placeholder="123"
