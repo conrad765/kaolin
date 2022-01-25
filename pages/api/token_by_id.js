@@ -13,9 +13,11 @@ const handler = nc({
   const dirRelativeToPublicFolder = 'assets'
   const dir = path.resolve('./public', dirRelativeToPublicFolder)
   const filenames = fs.readdirSync(dir)
-  const rarityFile=path.join('/', dirRelativeToPublicFolder, filenames[0])
-  const metadataFile = path.join('/', dirRelativeToPublicFolder, filenames[1])
-  console.log(rarityFile, 'filenames');
+  // console.log(process.cwd,'process');
+  // console.log(path.join(process.cwd(), 'data/data.json'),'hello')
+  const rarityFile=path.join(process.cwd(), dirRelativeToPublicFolder, filenames[0])
+  const metadataFile = path.join(process.cwd(), dirRelativeToPublicFolder, filenames[1])
+  // console.log(rarityFile, 'filenames');
   
   
   fs.readFile(rarityFile, 'utf8',  (err, data) => {
