@@ -9,7 +9,7 @@ const handler = nc({
     res.status(404).end('Page is not found')
   },
 }).post(async (req, res) => {
-  fs.readFile('assets/rarity.json', 'utf8',  (err, data) => {
+  fs.readFile('/assets/rarity.json', 'utf8',  (err, data) => {
     if (err) {
       console.error(err, 'error')
       return res.json(err)
@@ -22,7 +22,7 @@ const handler = nc({
       var item = allNft.rarity[i];
       if (item.name.substr(13) == id) {
         fs.readFile(
-          'assets/supersheeparweave.json',
+          '/assets/supersheeparweave.json',
           'utf8',
           (err, data2) => {
             if (err) {
