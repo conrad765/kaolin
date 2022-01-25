@@ -80,7 +80,7 @@ export default function Home() {
                   <div className="flex-1">
                     <p>{item?.value}</p>
                     <p className="pt-3 text-sm">
-                      {Number(item?.percentile).toFixed(2)}% chance
+                      {Number(item?.percentile*100).toFixed(2)}% chance
                     </p>
                   </div>
                 </div>
