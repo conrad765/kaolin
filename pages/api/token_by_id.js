@@ -31,7 +31,8 @@ const handler = nc({
     const { id } = req.body
     for (var i = 0; i < allNft.rarity.length; i++){
       var item = allNft.rarity[i];
-      if (item.name.substr(13) == id) {
+      if (item.id == id) {
+        console.log(item,'item');
         fs.readFile(
           metadataFile,
           'utf8',
@@ -46,6 +47,7 @@ const handler = nc({
             for (var j = 0; j < nftdetails.length; j++){
               var item2 = nftdetails[j];
               if (item2.name.substr(13) == id) {
+                console.log(item2, 'item2')
                 item.imageLink = item2.imageLink
                  res.status(200).send(item)
                 break;
