@@ -46,7 +46,7 @@ const handler = nc({
             const nftdetails = JSON.parse(data2)
             for (var j = 0; j < nftdetails.length; j++){
               var item2 = nftdetails[j];
-              console.log(item2.name.includes("697"), 'item2_name')
+              // console.log(item2.name.includes("697"), 'item2_name')
               if (item2.name.substr(13) == id) {
                 // console.log(item2, 'item2')
                 item.imageLink = item2.imageLink
