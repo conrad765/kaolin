@@ -1,4 +1,5 @@
 import nc from 'next-connect'
+import path from 'path'
 const fs = require('fs')
 const handler = nc({
   onError: (err, req, res) => {
@@ -9,7 +10,15 @@ const handler = nc({
     res.status(404).end('Page is not found')
   },
 }).post(async (req, res) => {
-  fs.readFile('/assets/rarity.json', 'utf8',  (err, data) => {
+  const dirRelativeToPublicFolder = 'assets'
+  const dir = path.resolve('./public', dirRelativeToPublicFolder)
+  const filenames = fs.readdirSync(dir)
+  const rarityFile=path.join('/', dirRelativeToPublicFolder, filenames[0])
+  const metadataFile = path.join('/', dirRelativeToPublicFolder, filenames[1])
+  console.log(rarityFile, 'filenames');
+  
+  
+  fs.readFile(rarityFile, 'utf8',  (err, data) => {
     if (err) {
       console.error(err, 'error')
       return res.json(err)
@@ -22,7 +31,7 @@ const handler = nc({
       var item = allNft.rarity[i];
       if (item.name.substr(13) == id) {
         fs.readFile(
-          '/assets/supersheeparweave.json',
+          metadataFile,
           'utf8',
           (err, data2) => {
             if (err) {
