@@ -26,7 +26,7 @@ export default function Home() {
   return (
     <div className="homepage relative h-screen p-6">
       <img
-        src="bg.png"
+        src="bg.webp"
         style={{ zIndex: '-5', objectFit: 'cover', height: '100vh' }}
         className="fixed top-0 bottom-0 left-0 right-0"
       />
