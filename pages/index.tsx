@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 export default function Home() {  
   const [id, setId] = useState(1)
-  const [nft, setNFT] = useState(null)
+  const [nft, setNFT] = useState({})
 
   useEffect(() => {
     if (id) {
@@ -31,8 +31,8 @@ export default function Home() {
           type="number"
           value={id}
           onChange={(e) => {
-            setId(e.target.value)
-            setNFT(null)
+            setId(Number(e.target.value))
+            setNFT({})
           }}
           className="m-4 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
           placeholder="123"
