@@ -32,7 +32,7 @@ const handler = nc({
     for (var i = 0; i < allNft.rarity.length; i++){
       var item = allNft.rarity[i];
       if (item.id == id) {
-        console.log(item,'item');
+        // console.log(item,'item');
         fs.readFile(
           metadataFile,
           'utf8',
@@ -46,8 +46,9 @@ const handler = nc({
             const nftdetails = JSON.parse(data2)
             for (var j = 0; j < nftdetails.length; j++){
               var item2 = nftdetails[j];
+              console.log(item2.name.includes("697"), 'item2_name')
               if (item2.name.substr(13) == id) {
-                console.log(item2, 'item2')
+                // console.log(item2, 'item2')
                 item.imageLink = item2.imageLink
                  res.status(200).send(item)
                 break;
