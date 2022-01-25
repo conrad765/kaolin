@@ -1,5 +1,4 @@
 import nc from 'next-connect'
-import axios from 'axios'
 const fs = require('fs')
 const handler = nc({
   onError: (err, req, res) => {
