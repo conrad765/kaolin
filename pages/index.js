@@ -25,17 +25,21 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className=" ">
-        <label className="text-white">Enter NFT ID:</label>
-        <input
-          type="number"
-          value={id}
-          onChange={(e) => {
-            setId(Number(e.target.value))
-          }}
-          className="m-4 mr-0 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
-          placeholder="123"
-        />
-        <button className="bg-black px-4 py-1 text-white" onClick={getRank}>Submit</button>
+        <p className="text-white text-center w-full">Enter NFT ID:</p>
+        <div>
+          <input
+            type="number"
+            value={id}
+            onChange={(e) => {
+              setId(Number(e.target.value))
+            }}
+            className="m-4 mr-0 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
+            placeholder="123"
+          />
+          <button className="bg-black px-4 py-1 text-white" onClick={getRank}>
+            Submit
+          </button>
+        </div>
       </div>
       {nft ? (
         <div className="flex w-full flex-wrap justify-center bg-gray-200 p-6 md:w-6/12 lg:w-6/12">
