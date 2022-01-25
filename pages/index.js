@@ -29,16 +29,16 @@ export default function Home() {
         <title>Rarity Checker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className=" ">
+      <div className="py-6 ">
         <p className="text-white text-center w-full">Enter NFT ID:</p>
-        <div>
+        <div className='flex justify-center my-6'>
           <input
             type="number"
             value={id}
             onChange={(e) => {
               setId(Number(e.target.value))
             }}
-            className="m-4 mr-0 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
+            className=" mr-0 border border-black bg-gray-100 px-4 py-1 focus:outline-none"
             placeholder="123"
           />
           <button className="bg-black px-4 py-1 text-white" onClick={getRank}>
