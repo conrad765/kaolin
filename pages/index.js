@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 export default function Home() {  
-  const [id, setId] = useState(1)
+  const [id, setId] = useState(0)
   const [nft, setNFT] = useState({})
 
   function getRank() {
@@ -17,6 +17,11 @@ export default function Home() {
         })
       .catch(err=>console.log(err,'err'))
   }
+
+  useEffect(() => {
+    getRank();
+  }, []);
+  
   
   return (
     <div className="flex min-h-screen w-full flex-col items-center justify-center bg-gray-800 p-6 py-2">
